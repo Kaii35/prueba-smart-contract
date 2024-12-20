@@ -7,7 +7,7 @@ const WalletConnector: React.FC<{ onConnect: (provider: ethers.providers.Web3Pro
   const connectWallet = async () => {
     if (window.ethereum) {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum as any); // Cast to `any`
+        const provider = new ethers.providers.Web3Provider(window.ethereum as any); 
         await provider.send('eth_requestAccounts', []);
         const signer = provider.getSigner();
         const address = await signer.getAddress();
